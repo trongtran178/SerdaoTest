@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentBalanceCard should render correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "borderColor": "#ddd",
+      "borderRadius": 12,
+      "borderWidth": 1,
+      "elevation": 2,
+      "padding": 12,
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.1,
+      "shadowRadius": 5,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#333",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "marginBottom": 5,
+      }
+    }
+  >
+    Current Balance
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#4CAF50",
+        "fontSize": 24,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    $123.45
+  </Text>
+</View>
+`;

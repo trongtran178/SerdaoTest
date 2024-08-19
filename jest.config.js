@@ -1,3 +1,7 @@
 module.exports = {
   preset: 'react-native',
+  setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js', './jest/setup.js'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?(@react-native|react-native)|react-navigation|react-navigation-redux-helpers|@react-native-community|@react-navigation|)',
+],
 };
