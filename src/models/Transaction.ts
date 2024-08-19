@@ -30,7 +30,9 @@ export class Transaction {
     const id = get(json, 'id', '');
     const amount = get(json, 'amount', 0);
     const currentBalance = get(json, 'currentBalance', 0);
-    console.log("log-33", amount)
+
+    
+
     if (isNaN(amount)) {
       throw new Error('Amount must be a number');
     }
@@ -39,8 +41,8 @@ export class Transaction {
         `Amount cannot be greater than balance ($${currentBalance})`,
       );
     }
-    if (amount <= 1) {
-      throw new Error('Amount cannot be less than or equal to $1');
+    if (amount < 1) {
+      throw new Error('Amount cannot be less than $1');
     }
 
     const account = Account.instantiate(get(json, 'account', ''));

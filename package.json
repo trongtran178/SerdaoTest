@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "test:coverage": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx,js,jsx}' --coverageDirectory=./src/coverage"
+    "test:coverage": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx,js,jsx}' --coverageDirectory=./src/coverage --coveragePathIgnorePatterns=./src/coverage/lcov-report"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4",
@@ -16,6 +16,7 @@
     "@react-native-picker/picker": "^2.6.1",
     "@react-navigation/native": "^6.1.15",
     "@react-navigation/native-stack": "^6.9.23",
+    "ibantools": "^4.5.1",
     "lodash": "^4.17.21",
     "react": "18.2.0",
     "react-native": "0.73.5",
@@ -48,6 +49,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "packageManager": "yarn@1.22.22"
+  }
 }

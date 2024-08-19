@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen should render correctly 1`] = `
+<RCTScrollView
+  style={
+    {
+      "flex": 1,
+      "margin": 12,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderColor": "#ddd",
+          "borderRadius": 12,
+          "borderWidth": 1,
+          "elevation": 2,
+          "padding": 12,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 5,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#333",
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "marginBottom": 5,
+          }
+        }
+      >
+        Current Balance
+      </Text>
+      <Text
+        style={
+          {
+            "color": "#4CAF50",
+            "fontSize": 24,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        $1000.00
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#4CAF50",
+            "borderColor": "#ddd",
+            "borderRadius": 12,
+            "borderWidth": 1,
+            "flex": 0.5,
+            "justifyContent": "center",
+            "marginRight": 4,
+            "marginVertical": 12,
+            "opacity": 1,
+            "padding": 12,
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#fff",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              },
+            ]
+          }
+        >
+          Add Transaction
+        </Text>
+      </View>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#2196F3",
+            "borderColor": "#ddd",
+            "borderRadius": 12,
+            "borderWidth": 1,
+            "flex": 0.5,
+            "justifyContent": "center",
+            "marginLeft": 4,
+            "marginVertical": 12,
+            "opacity": 1,
+            "padding": 12,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Create Beneficiary
+        </Text>
+      </View>
+    </View>
+    <Text
+      style={
+        {
+          "color": "#333",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "marginBottom": 8,
+          "marginTop": 8,
+        }
+      }
+    >
+      Transaction History
+    </Text>
+    <RCTScrollView
+      ListEmptyComponent={[Function]}
+      data={[]}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEnabled={false}
+      scrollEventThrottle={0.0001}
+      stickyHeaderIndices={[]}
+      viewabilityConfigCallbackPairs={[]}
+    >
+      <View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+              "padding": 20,
+            }
+          }
+          testID="tranhis-list-empty-component"
+        >
+          <Image
+            source={
+              {
+                "uri": "https://cdni.iconscout.com/illustration/premium/thumb/no-transaction-illustration-download-in-svg-png-gif-file-formats--empty-state-page-payment-simple-error-pack-user-interface-illustrations-6024630.png?f=webp",
+              }
+            }
+            style={
+              {
+                "height": 100,
+                "marginBottom": 20,
+                "width": 100,
+              }
+            }
+          />
+          <Text
+            style={
+              {
+                "color": "#333",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginBottom": 10,
+              }
+            }
+          >
+            No Transaction History
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#666",
+                "fontSize": 16,
+                "marginBottom": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            You haven't made any transactions yet. Start by sending or receiving money!
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</RCTScrollView>
+`;

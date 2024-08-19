@@ -1,0 +1,498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionScreen should render correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "borderRadius": 5,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      autoFocus={true}
+      inputMode="decimal"
+      keyboardType="numeric"
+      onChangeText={[Function]}
+      placeholder="Enter amount"
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderColor": "#ddd",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "elevation": 2,
+          "height": 50,
+          "marginBottom": 15,
+          "marginVertical": 8,
+          "paddingHorizontal": 10,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 5,
+          "width": "80%",
+        }
+      }
+      value=""
+    />
+    <View>
+      <Image
+        source={
+          {
+            "uri": "https://cdn-icons-png.flaticon.com/512/33/33007.png",
+          }
+        }
+        style={
+          {
+            "height": 20,
+            "position": "absolute",
+            "right": 12,
+            "top": -12,
+            "width": 20,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "borderRadius": 5,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Recipient Name"
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderColor": "#ddd",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "elevation": 2,
+          "height": 50,
+          "marginBottom": 15,
+          "marginVertical": 8,
+          "paddingHorizontal": 10,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 5,
+          "width": "80%",
+        }
+      }
+      value=""
+    />
+  </View>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "borderRadius": 5,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      onChangeText={[Function]}
+      placeholder="Recipient IBAN"
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderColor": "#ddd",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "elevation": 2,
+          "height": 50,
+          "marginBottom": 15,
+          "marginVertical": 8,
+          "paddingHorizontal": 10,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 5,
+          "width": "80%",
+        }
+      }
+      value=""
+    />
+    <View>
+      <Image
+        source={
+          {
+            "uri": "https://cdn-icons-png.flaticon.com/512/4930/4930340.png",
+          }
+        }
+        style={
+          {
+            "height": 20,
+            "position": "absolute",
+            "right": 12,
+            "top": -12,
+            "width": 20,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#4CAF50",
+        "borderRadius": 12,
+        "elevation": 2,
+        "marginVertical": 12,
+        "opacity": 1,
+        "padding": 12,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#fff",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Submit Transaction
+    </Text>
+  </View>
+  <View
+    accessibilityHint="Tap to close the bottom sheet"
+    accessibilityLabel="Bottom sheet backdrop"
+    accessibilityRole="button"
+    accessible={true}
+    animatedPosition={1334}
+    collapsable={false}
+    forwardedRef={[Function]}
+    handlerTag={1}
+    handlerType="TapGestureHandler"
+    jestAnimatedStyle={
+      {
+        "value": {
+          "flex": 1,
+          "opacity": 0,
+        },
+      }
+    }
+    onGestureHandlerEvent={[Function]}
+    pointerEvents="auto"
+    style={
+      {
+        "backgroundColor": "black",
+        "bottom": 0,
+        "flex": 1,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+  <View
+    onLayout={[Function]}
+    pointerEvents="box-none"
+    style={
+      [
+        undefined,
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        {
+          "bottom": 0,
+          "overflow": "hidden",
+          "top": 0,
+        },
+      ]
+    }
+  >
+    <View
+      collapsable={false}
+      jestAnimatedStyle={
+        {
+          "value": {
+            "opacity": 1,
+            "transform": [
+              {
+                "translateY": 1334,
+              },
+            ],
+          },
+        }
+      }
+      style={
+        {
+          "flexDirection": "column-reverse",
+          "left": 0,
+          "opacity": 1,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "transform": [
+            {
+              "translateY": 1334,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        accessibilityLabel="Bottom Sheet"
+        accessibilityRole="adjustable"
+        accessible={true}
+        pointerEvents="none"
+        style={
+          [
+            {
+              "backgroundColor": "white",
+              "borderRadius": 15,
+            },
+            {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
+        }
+      />
+      <View
+        accessibilityLabel="Bottom Sheet"
+        accessibilityRole="adjustable"
+        accessible={true}
+        collapsable={false}
+        jestAnimatedStyle={
+          {
+            "value": {
+              "paddingBottom": -999,
+            },
+          }
+        }
+        pointerEvents="box-none"
+        style={
+          {
+            "overflow": "hidden",
+            "paddingBottom": -999,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          forwardedRef={[Function]}
+          handlerTag={2}
+          handlerType="PanGestureHandler"
+          jestAnimatedStyle={
+            {
+              "value": {
+                "height": 0,
+              },
+            }
+          }
+          onGestureHandlerEvent={[Function]}
+          style={
+            {
+              "height": 0,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            forwardedRef={[Function]}
+            handlerTag={3}
+            handlerType="PanGestureHandler"
+            jestAnimatedStyle={
+              {
+                "value": {},
+              }
+            }
+            onGestureHandlerEvent={[Function]}
+            style={
+              {
+                "flex": 1,
+                "overflow": "visible",
+              }
+            }
+          >
+            <RCTScrollView
+              ListHeaderComponent={<BottomSheetFlatListHeader />}
+              collapsable={false}
+              contentContainerStyle={
+                {
+                  "backgroundColor": "white",
+                }
+              }
+              data={[]}
+              decelerationRate={0}
+              forwardedRef={[Function]}
+              getItem={[Function]}
+              getItemCount={[Function]}
+              handlerTag={4}
+              handlerType="NativeViewGestureHandler"
+              jestAnimatedStyle={
+                {
+                  "value": {},
+                }
+              }
+              keyExtractor={[Function]}
+              keyboardDismissMode="interactive"
+              onContentSizeChange={[Function]}
+              onGestureHandlerEvent={[Function]}
+              onLayout={[Function]}
+              onMomentumScrollBegin={[Function]}
+              onMomentumScrollEnd={[Function]}
+              onScroll={[Function]}
+              onScrollBeginDrag={[Function]}
+              onScrollEndDrag={[Function]}
+              overScrollMode="never"
+              removeClippedSubviews={false}
+              renderItem={[Function]}
+              scrollEventThrottle={16}
+              showsVerticalScrollIndicator={false}
+              stickyHeaderIndices={[]}
+              style={{}}
+              viewabilityConfigCallbackPairs={[]}
+            >
+              <View>
+                <View
+                  collapsable={false}
+                  onLayout={[Function]}
+                >
+                  <Text
+                    style={
+                      {
+                        "alignSelf": "center",
+                        "color": "#333",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "marginBottom": 8,
+                        "marginTop": 8,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    Choose Beneficiary
+                  </Text>
+                </View>
+              </View>
+            </RCTScrollView>
+          </View>
+        </View>
+      </View>
+      <View
+        collapsable={false}
+        forwardedRef={[Function]}
+        handlerTag={5}
+        handlerType="PanGestureHandler"
+        jestAnimatedStyle={
+          {
+            "value": {},
+          }
+        }
+        onGestureHandlerEvent={[Function]}
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityHint="Drag up or down to extend or minimize the bottom sheet"
+          accessibilityLabel="Bottom sheet handle"
+          accessibilityRole="adjustable"
+          accessible={true}
+          collapsable={false}
+          jestAnimatedStyle={
+            {
+              "value": {},
+            }
+          }
+          style={
+            {
+              "padding": 10,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            jestAnimatedStyle={
+              {
+                "value": {},
+              }
+            }
+            style={
+              {
+                "alignSelf": "center",
+                "backgroundColor": "rgba(0, 0, 0, 0.75)",
+                "borderRadius": 4,
+                "height": 4,
+                "width": 56.25,
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

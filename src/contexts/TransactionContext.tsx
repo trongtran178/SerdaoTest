@@ -34,10 +34,11 @@ export const TransactionProvider = ({
       name: get(account, 'name', ''),
       iban: get(account, 'iban', ''),
     });
-    if(/^\d+$/.test(amount) === false)
+    const regex = /^-?\d+(\.\d+)?$/;
+    
+    if(/^-?\d+(\.\d+)?$/.test(amount) === false)
       throw new Error('Amount must be a number');
     const amountParsed = parseFloat(amount);
-    console.log("log-39", amountParsed);
     const newTransaction: Transaction = Transaction.instantiate({
       id: Date.now(),
       amount: amountParsed,
@@ -69,18 +70,13 @@ export const TransactionProvider = ({
     const getTransactions = async () => {
       try {
         const data = await AsyncStorage.getItem(ECacheKeys.TRANSACTIONS_CONTEXT);
-        console.log('log-72', data)
         if (data) {
           const {transactions: transactionsCached, balance: balanceCached} =
             JSON.parse(data);
-          console.log('log-76', transactionsCached);
-          console.log('log-77', balanceCached);
           setTransactions(transactionsCached);
           setBalance(balanceCached);
         }
-      } catch (e) {
-        console.log('log-82', e);
-      }
+      } catch (e) {}
     };
 
     getTransactions();

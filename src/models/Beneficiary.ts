@@ -1,5 +1,6 @@
 import get from 'lodash/get';
-import {FIRST_NAME_REGEX, IBAN_REGEX, LAST_NAME_REGEX} from '../constants';
+import {FIRST_NAME_REGEX, LAST_NAME_REGEX} from '../constants';
+const ibantools = require('ibantools');
 
 export class Beneficiary {
   name: string;
@@ -36,7 +37,6 @@ export class Beneficiary {
     }
 
     const fullName = `${firstName} ${lastName}`;
-    console.log(fullName);
     if (typeof fullName !== 'string' || fullName.trim() === '') {
       throw new Error('Beneficiary needs a valid name');
     }
@@ -44,7 +44,7 @@ export class Beneficiary {
     if (
       typeof iban !== 'string' ||
       iban.trim() === '' ||
-      IBAN_REGEX.test(iban) === false
+      ibantools.isValidIBAN(iban) === false
     ) {
       throw new Error('Beneficiary needs a valid iban');
     }

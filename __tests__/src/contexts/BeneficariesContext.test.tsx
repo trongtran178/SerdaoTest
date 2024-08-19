@@ -3,7 +3,7 @@ import { BeneficariesContextType, BeneficiariesProvider, useBeneficiaries } from
 import React, { useEffect, useState } from "react";
 import { first, get, isNil } from "lodash";
 import { View, TouchableOpacity, Text } from "react-native";
-import {  fireEvent, render } from '@testing-library/react-native';
+import {  fireEvent, render, waitFor } from '@testing-library/react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ECacheKeys } from "../../../src/constants";
 import { notifyMessage } from "../../../src/utils";
@@ -51,12 +51,7 @@ describe('BeneficiariesContext', () => {
     expect(getByText('John Doe')).toBeDefined();
   });
 
-
-
   it('should save data to AsyncStorage when beneficiaries state change', async () => {
-    // const AsyncStorageSetItemSpy = jest.spyOn(AsyncStorage, 'setItem');
-    AsyncStorage.setItem = jest.fn<typeof AsyncStorage.setItem>();
-    // const notifyMessageSpy = jest.spyOn(require('../../../src/utils'), 'notifyMessage');
     
     const TestComponent = () => {
       const {addBeneficiary} = useBeneficiaries() as BeneficariesContextType;
@@ -84,9 +79,39 @@ describe('BeneficiariesContext', () => {
     setTimeout(() => {
       expect(AsyncStorage.setItem).toHaveBeenCalled();      
     }, 1000);
-    // expect(notifyMessageSpy).toHaveBeenCalledWith('Beneficiary added successfully');
-    // AsyncStorageSetItemSpy.mockRestore();
-    // notifyMessageSpy.mockRestore();
+  });
+
+
+  it('should load beneficiaries from AsyncStorage when application starts', async () => {
+    AsyncStorage.getItem = jest.fn<typeof AsyncStorage.getItem>().mockResolvedValue(
+      "{\"beneficiaries\":[{\"firstName\":\"John\",\"lastName\":\"Doe\",\"iban\":\"DE89370400440532013000\"}]}"
+    );
+    const TestComponent = () => {
+      const {beneficiaries, addBeneficiary} = useBeneficiaries() as BeneficariesContextType;
+      const onPress = () => {
+        addBeneficiary({
+          firstName: 'John',
+          lastName: 'Doe',
+          iban: 'DE89370400440532013000',
+        });
+      };
+      const beneficiary = first(beneficiaries);
+      console.log('log-101', beneficiaries);
+      return (
+        <View>
+          <TouchableOpacity onPress={onPress}><Text>Add beneficiary</Text></TouchableOpacity>;
+          {isNil(beneficiary) ? <Text>No beneficiary</Text> : null}
+        </View>
+      )
+    };
+    const {getByText} = await waitFor(() => render(
+      <BeneficiariesProvider>
+        <TestComponent />
+      </BeneficiariesProvider>,
+    ));
+    await waitFor(() => expect(AsyncStorage.getItem).toHaveBeenCalled());  
+    setTimeout(() => expect(() => getByText('No beneficiary')).toThrowError(), 100);                 
+    
   });
 
 });

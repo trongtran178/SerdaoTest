@@ -155,7 +155,6 @@ describe('TransactionContext', () => {
         <TestComponent />
       </TransactionProvider>,
     ));
-    console.log('log-155', toJSON());
     expect(getByText('900')).toBeDefined(); // balance;
     expect(getByText('1')).toBeDefined(); // balance;
     expect(() => getByText('2')).toThrowError(); // balance;

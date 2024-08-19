@@ -64,23 +64,35 @@ const TransactionScreen = ({navigation}: Props) => {
   };
 
   // render
-  const renderItem = useCallback(({item}: {item: Beneficiary}) => {
+  const renderItem = ({item}: {item: Beneficiary}) => {
     const text = item.name + ' - ' + item.iban;
+
+    const isActive = item.name === name && item.iban === iban;
+
+    const activeStyle = isActive
+      ? {
+          backgroundColor: '#007bff',
+          borderColor: '#007bff',
+        }
+      : {};
+      const activeText = isActive ? {
+        color: '#fff'}: {}
     return (
     <TouchableOpacity
       style={[
         styles.itemContainer,
         styles.materialDesignItem,
         styles.chooseItem,
+        activeStyle
       ]}
       onPress={() => handleChooseBeneficiary(item)}>
       <View style={styles.materialDesignItemContent}>
-        <Text style={styles.materialDesignItemText}>{text}</Text>
+        <Text style={[styles.materialDesignItemText, activeText]}>{text}</Text>
         {/* <Image name="check-circle" size={20} color="#007bff" /> */}
       </View>
     </TouchableOpacity>
     )
-  }, []);
+  }
 
   // callbacks
   const handleSheetChange = useCallback((index: number) => {
@@ -111,7 +123,6 @@ const TransactionScreen = ({navigation}: Props) => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <CommonTextInput
-          style={styles.textInput}
           onChangeText={setAmount}
           value={amount}
           autoFocus
@@ -177,26 +188,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textInput: {
-    borderWidth: 1,
-    marginVertical: 8,
-    width: '80%',
-    height: 50,
-    borderColor: '#ddd',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-    backgroundColor: '#fff',
-    elevation: 2, // for Android shadow
-    shadowColor: '#000', // for iOS shadow
-    shadowOffset: {width: 0, height: 2}, // for iOS shadow
-    shadowOpacity: 0.1, // for iOS shadow
-    shadowRadius: 5, // for iOS shadow
-  },
-  picker: {
-    height: 50,
-    width: 200,
-  },
   contentContainer: {
     backgroundColor: 'white',
   },
@@ -216,21 +207,6 @@ const styles = StyleSheet.create({
     right: 12,
     width: 20,
     height: 20,
-  },
-  input: {
-    width: '80%',
-    height: 50,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-    backgroundColor: '#fff',
-    elevation: 2, // for Android shadow
-    shadowColor: '#000', // for iOS shadow
-    shadowOffset: {width: 0, height: 2}, // for iOS shadow
-    shadowOpacity: 0.1, // for iOS shadow
-    shadowRadius: 5, // for iOS shadow
   },
   button: {
     backgroundColor: '#4CAF50', // Material Design green
@@ -259,8 +235,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 12,
     marginVertical: 6,
-    elevation: 2, // for Android shadow
-    shadowColor: '#000', // for iOS shadow
+    elevation: 2,
+    shadowColor: '#000',
     shadowOffset: {width: 0, height: 2}, // for iOS shadow
     shadowOpacity: 0.1, // for iOS shadow
     shadowRadius: 5, // for iOS shadow
