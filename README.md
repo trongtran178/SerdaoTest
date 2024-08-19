@@ -1,22 +1,61 @@
-# Introduction
+# Installation and Launch Instructions
 
-We're thrilled to have you at this stage of our selection process! This test is designed to assess your skills and approach to problem-solving in a practical scenario. Please carefully follow the instructions below and ensure you read through the entire document. Good luck!
+## 1. Clone the Repository
+First, clone your repository to your local machine:
+```
+git clone https://github.com/trongtran178/SerdaoTest.git
+cd SerdaoTest
+```
 
-# Set up the Project
+## 2. Install Dependencies
+Install the required dependencies using npm or yarn:
+```
+npm install
+# or
+yarn install
+```
 
-A significant challenge when working with React Native is setting up a complete environment before being able to run the project. We have intentionally omitted these instructions to assess your ability to independently set up said environment.
+## 3. iOS Setup
+For iOS, navigate to the ios directory and install the necessary CocoaPods:
+```
+cd ios
+pod install
+cd ..
+```
 
-# Test
+## 4. Android Setup
+For Android, make sure the local.properties file in the android directory is correctly set up with your Android SDK path:
+```
+# Create or edit the android/local.properties file to include the following line:
+sdk.dir = /path/to/your/android/sdk
+```
 
-You will be working on an application that facilitates transactions to beneficiaries. To successfully complete the test, you will need to implement the following features:
- - Introduce a new page to create a beneficiary, including fields for their first name, last name, and IBAN. Additionally, incorporate an IBAN validator to ensure the IBAN's validity.
- - Enable the selection of a beneficiary from a list when making a transaction.
- - Preserve the state of the application so that upon reopening, the list of beneficiaries, transaction history, and balance are retained.
+## 5. Running the Project
+To run the project on an iOS or Android emulator/simulator:
+**iOS**
+```
+npx react-native run-ios
+```
+**Android**
+```
+npx react-native run-android
+```
 
-Note: you have free rein in how you want to implement this test, give it you best shot!
+## 6. Running Tests
+To run tests, you can use the following command:
+```
+npm test
+# or
+yarn test
+```
 
-# Result
-
-Please create a new Git repository to store both the test first version and your modifications. Document all the commands needed to install and launch this project, excluding the installation of any external SDKs/platforms, our focus will remain strictly on this project.
-
-We hope that you will enjoy taking this test, best of luck!
+## Additional Commands
+- Start Metro Bundler (in case it doesn't start automatically):
+```
+npx react-native start
+```
+Build APK (Android):
+```
+cd android
+./gradlew assembleRelease
+```
