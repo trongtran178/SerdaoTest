@@ -1,10 +1,3 @@
-#Images
-![image](https://github.com/user-attachments/assets/8bebc2e1-b5e4-4ba0-a1ca-7589421241d9)
-![image](https://github.com/user-attachments/assets/0a0207d1-5a98-4b43-bbcf-8c525b213028)
-![image](https://github.com/user-attachments/assets/c9501807-01b5-43b6-9537-9ed87bdd149c)
-![image](https://github.com/user-attachments/assets/af120241-bc3e-42bc-a845-d5e542d841c7)
-
-
 # Installation and Launch Instructions
 
 ## 1. Clone the Repository
@@ -66,3 +59,10 @@ Build APK (Android):
 cd android
 ./gradlew assembleRelease
 ```
+
+![image](https://github.com/user-attachments/assets/8bebc2e1-b5e4-4ba0-a1ca-7589421241d9)
+![image](https://github.com/user-attachments/assets/0a0207d1-5a98-4b43-bbcf-8c525b213028)
+![image](https://github.com/user-attachments/assets/c9501807-01b5-43b6-9537-9ed87bdd149c) 
+![image](https://github.com/user-attachments/assets/af120241-bc3e-42bc-a845-d5e542d841c7)
+
+
