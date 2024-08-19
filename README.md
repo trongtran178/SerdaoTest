@@ -1,7 +1,7 @@
 # Installation and Launch Instructions
 
 ## 1. Clone the Repository
-First, clone your repository to your local machine:
+First, clone repository to your local machine:
 ```
 git clone https://github.com/trongtran178/SerdaoTest.git
 cd SerdaoTest
