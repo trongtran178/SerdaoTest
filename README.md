@@ -32,6 +32,7 @@ sdk.dir = /path/to/your/android/sdk
 
 ## 5. Running the Project
 To run the project on an iOS or Android emulator/simulator:
+
 **iOS**
 ```
 npx react-native run-ios
