@@ -36,6 +36,7 @@ const CreateBeneficaryScreen = ({navigation}: Props) => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <CommonTextInput
+          testID='textinput_firstname'
           onChangeText={setFirstName}
           value={firstName}
           maxLength={50}
@@ -47,6 +48,7 @@ const CreateBeneficaryScreen = ({navigation}: Props) => {
       </View>
       <View style={styles.inputContainer}>
         <CommonTextInput
+          testID='textinput_lastname'
           onChangeText={setLastName}
           value={lastName}
           maxLength={50}
@@ -59,6 +61,7 @@ const CreateBeneficaryScreen = ({navigation}: Props) => {
 
       <View style={styles.inputContainer}>
         <CommonTextInput
+          testID='textinput_iban'
           onChangeText={setIban}
           value={iban}
           maxLength={34}

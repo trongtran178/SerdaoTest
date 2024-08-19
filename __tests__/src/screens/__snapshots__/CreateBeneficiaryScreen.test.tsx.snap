@@ -44,6 +44,7 @@ exports[`CreateBeneficiaryScreen renders correctly 1`] = `
           "width": "80%",
         }
       }
+      testID="textinput_firstname"
       value=""
     />
     <View>
@@ -99,6 +100,7 @@ exports[`CreateBeneficiaryScreen renders correctly 1`] = `
           "width": "80%",
         }
       }
+      testID="textinput_lastname"
       value=""
     />
     <View>
@@ -154,6 +156,7 @@ exports[`CreateBeneficiaryScreen renders correctly 1`] = `
           "width": "80%",
         }
       }
+      testID="textinput_iban"
       value=""
     />
     <View>

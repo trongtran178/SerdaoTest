@@ -1,14 +1,15 @@
 import 'react-native';
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import CreateBeneficiaryScreen from '../../../src/screens/CreateBeneficiaryScreen';
 import { describe, it, jest, expect } from '@jest/globals';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamListBase } from '@react-navigation/native';
-import { BeneficiariesProvider } from '../../../src/contexts/BeneficariesContext';
+import { BeneficariesContextType, BeneficiariesProvider, useBeneficiaries } from '../../../src/contexts/BeneficariesContext';
+import { Command } from 'commander';
+import { Text } from 'react-native';
 
 describe('CreateBeneficiaryScreen', () => {
-  it('renders correctly', () => {
     const navigationMock = {
         navigate: jest.fn(),
         goBack: jest.fn(),
@@ -37,7 +38,14 @@ describe('CreateBeneficiaryScreen', () => {
         pop: jest.fn(),
         popToTop: jest.fn(),
     } as unknown as NativeStackNavigationProp<ParamListBase, "CreateBeneficiary", undefined>;
+    
+    const routeMock = {
+        key: "CreateBeneficiary",
+        name: "CreateBeneficiary",
+        params: {}
+      } as const;
 
+  it('renders correctly', () => {
     const routeMock = {
         key: "CreateBeneficiary",
         name: "CreateBeneficiary",
@@ -53,4 +61,54 @@ describe('CreateBeneficiaryScreen', () => {
 
     expect(toJSON()).toMatchSnapshot();
   });
+
+  it('should return null when beneficiaries context is nil', () => {
+ 
+    const routeMock = {
+      key: "CreateBeneficiary",
+      name: "CreateBeneficiary",
+      params: {}
+    } as const;
+  
+
+    const { toJSON } = render(
+      <CreateBeneficiaryScreen navigation={navigationMock} route={routeMock} />
+    );
+
+    expect(toJSON()).toBeNull();
+  });
+
+  
+  it('should call onCreate when press Create beneficiary', () => {  
+
+    const TestComponent = () => { 
+        const beneficiariesContext = useBeneficiaries();
+        const {beneficiaries} = beneficiariesContext as BeneficariesContextType;
+        return (
+            <> 
+                {beneficiaries.length > 0 && <Text>{beneficiaries[0].name}</Text>}
+                <CreateBeneficiaryScreen navigation={navigationMock} route={routeMock} />
+            </>
+        )
+    }
+
+    const { getByText, getByTestId } = render(
+      <BeneficiariesProvider>
+        <TestComponent />
+      </BeneficiariesProvider>
+    );
+    fireEvent.changeText(getByTestId('textinput_firstname'), 'John');
+    fireEvent.changeText(getByTestId('textinput_lastname'), 'Doe');
+    fireEvent.changeText(getByTestId('textinput_iban'), 'AT483200000012345864');
+    fireEvent.press(getByText('Create beneficiary'));
+
+    expect(getByText('John Doe')).toBeDefined();
+
+    fireEvent.changeText(getByTestId('textinput_firstname'), '');
+    fireEvent.changeText(getByTestId('textinput_lastname'), '');
+    fireEvent.changeText(getByTestId('textinput_iban'), 'AT483200000012345864');
+    fireEvent.press(getByText('Create beneficiary'));
+    expect(getByTestId('textinput_iban').props.value).toEqual('AT483200000012345864');
+  });
+
 });

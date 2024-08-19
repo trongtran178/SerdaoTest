@@ -96,7 +96,6 @@ describe('BeneficiariesContext', () => {
         });
       };
       const beneficiary = first(beneficiaries);
-      console.log('log-101', beneficiaries);
       return (
         <View>
           <TouchableOpacity onPress={onPress}><Text>Add beneficiary</Text></TouchableOpacity>;

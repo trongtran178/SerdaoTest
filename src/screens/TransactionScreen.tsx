@@ -88,7 +88,6 @@ const TransactionScreen = ({navigation}: Props) => {
       onPress={() => handleChooseBeneficiary(item)}>
       <View style={styles.materialDesignItemContent}>
         <Text style={[styles.materialDesignItemText, activeText]}>{text}</Text>
-        {/* <Image name="check-circle" size={20} color="#007bff" /> */}
       </View>
     </TouchableOpacity>
     )
@@ -96,7 +95,6 @@ const TransactionScreen = ({navigation}: Props) => {
 
   // callbacks
   const handleSheetChange = useCallback((index: number) => {
-    console.log('handleSheetChange', index);
   }, []);
 
   const handleSnapPress = useCallback((index: number) => {
@@ -145,7 +143,7 @@ const TransactionScreen = ({navigation}: Props) => {
             Keyboard.dismiss();
             handleSnapPress(0)
           }}>
-            <Image source={Icons.choose_beneficiary} style={styles.icon} />
+            <Image testID='choose_beneficiary_image' source={Icons.choose_beneficiary} style={styles.icon} />
           </TouchableOpacity>
         ) : null}
       </View>
