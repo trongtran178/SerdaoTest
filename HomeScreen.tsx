@@ -1,45 +1,33 @@
 import React from 'react';
-import {View, Text, Button, FlatList, StyleSheet} from 'react-native';
-import {useTransactions} from './TransactionContext';
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import isNil from 'lodash/isNil';
-import {Transaction} from './models';
-import {ParamListBase} from '@react-navigation/native';
+import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { useTransactions } from './TransactionContext';
 
-type Props = NativeStackScreenProps<ParamListBase, 'Home'>;
+const HomeScreen = ({ navigation }) => {
+  const { transactions, balance } = useTransactions();
 
-const HomeScreen = ({navigation}: Props) => {
-  const transactionContext = useTransactions();
-  if (isNil(transactionContext)) {
-    return null;
-  }
-  const {transactions, balance} = transactionContext;
-
-  const renderItem = ({item}: {item: Transaction}) => (
+  const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.itemText}>Transaction ID: {item.id}</Text>
       <Text style={styles.itemText}>Amount: ${item.amount.toFixed(2)}</Text>
-      {/* {item.account && (
+      {item.account && (
         <>
           <Text style={styles.itemText}>To: {item.account.name}</Text>
           <Text style={styles.itemText}>IBAN: {item.account.iban}</Text>
         </>
-      )} */}
+      )}
     </View>
   );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.balanceText}>
-        Current Balance: ${balance.toFixed(2)}
-      </Text>
+      <Text style={styles.balanceText}>Current Balance: ${balance.toFixed(2)}</Text>
       <Button
         title="Add Transaction"
         onPress={() => navigation.navigate('Transaction')}
       />
       <FlatList
         data={transactions}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}
         contentContainerStyle={styles.listContainer}
       />
