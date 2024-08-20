@@ -20,10 +20,6 @@ export type RootStackParamList = {
 };
 
 const App = () => {
-  useEffect(() => {
-    AsyncStorage.clear();
-  }, []);
-
   return (
     <GestureHandlerRootView>
       <TransactionProvider>
